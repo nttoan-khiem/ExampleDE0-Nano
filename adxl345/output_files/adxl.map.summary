@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon Jul 01 02:08:35 2024
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : adxl
+Top-level Entity Name : adxl
+Family : Cyclone IV E
+Total logic elements : 187
+    Total combinational functions : 89
+    Dedicated logic registers : 132
+Total registers : 132
+Total pins : 12
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

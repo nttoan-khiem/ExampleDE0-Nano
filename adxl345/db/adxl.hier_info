@@ -1,0 +1,1019 @@
+|adxl
+clk_i => clk_i.IN1
+cs_o <= spiCom:spiCommunicationBlock.cs_o
+clk_o <= spiCom:spiCommunicationBlock.clk_spi
+miso_io <> spiCom:spiCommunicationBlock.miso_io
+led[0] <= driveLed:driverLed.led_o
+led[1] <= driveLed:driverLed.led_o
+led[2] <= driveLed:driverLed.led_o
+led[3] <= driveLed:driverLed.led_o
+led[4] <= driveLed:driverLed.led_o
+led[5] <= driveLed:driverLed.led_o
+led[6] <= driveLed:driverLed.led_o
+led[7] <= driveLed:driverLed.led_o
+
+
+|adxl|div_freq:divFrequenceBlock
+clk_i => clk_i.IN1
+clk_o <= mytff:tff11.q
+
+
+|adxl|div_freq:divFrequenceBlock|mytff:tff0
+clk => q~reg0.CLK
+t => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|div_freq:divFrequenceBlock|mytff:tff1
+clk => q~reg0.CLK
+t => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|div_freq:divFrequenceBlock|mytff:tff2
+clk => q~reg0.CLK
+t => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|div_freq:divFrequenceBlock|mytff:tff3
+clk => q~reg0.CLK
+t => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|div_freq:divFrequenceBlock|mytff:tff4
+clk => q~reg0.CLK
+t => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|div_freq:divFrequenceBlock|mytff:tff5
+clk => q~reg0.CLK
+t => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|div_freq:divFrequenceBlock|mytff:tff6
+clk => q~reg0.CLK
+t => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|div_freq:divFrequenceBlock|mytff:tff7
+clk => q~reg0.CLK
+t => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|div_freq:divFrequenceBlock|mytff:tff8
+clk => q~reg0.CLK
+t => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|div_freq:divFrequenceBlock|mytff:tff9
+clk => q~reg0.CLK
+t => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|div_freq:divFrequenceBlock|mytff:tff10
+clk => q~reg0.CLK
+t => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|div_freq:divFrequenceBlock|mytff:tff11
+clk => q~reg0.CLK
+t => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|RWControl:stateControlBlock
+clk_i => re_o~reg0.CLK
+clk_i => remainBit[0]~reg0.CLK
+clk_i => remainBit[1]~reg0.CLK
+clk_i => remainBit[2]~reg0.CLK
+clk_i => mb_o~reg0.CLK
+clk_i => addr_o[0]~reg0.CLK
+clk_i => addr_o[1]~reg0.CLK
+clk_i => addr_o[2]~reg0.CLK
+clk_i => addr_o[3]~reg0.CLK
+clk_i => addr_o[4]~reg0.CLK
+clk_i => addr_o[5]~reg0.CLK
+clk_i => data_o[0]~reg0.CLK
+clk_i => data_o[1]~reg0.CLK
+clk_i => data_o[2]~reg0.CLK
+clk_i => data_o[3]~reg0.CLK
+clk_i => data_o[4]~reg0.CLK
+clk_i => data_o[5]~reg0.CLK
+clk_i => data_o[6]~reg0.CLK
+clk_i => data_o[7]~reg0.CLK
+clk_i => state~4.DATAIN
+complete_i => state.OUTPUTSELECT
+complete_i => state.OUTPUTSELECT
+complete_i => state.OUTPUTSELECT
+complete_i => state.OUTPUTSELECT
+complete_i => state.OUTPUTSELECT
+mb_o <= mb_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_o[0] <= data_o[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_o[1] <= data_o[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_o[2] <= data_o[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_o[3] <= data_o[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_o[4] <= data_o[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_o[5] <= data_o[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_o[6] <= data_o[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_o[7] <= data_o[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+addr_o[0] <= addr_o[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+addr_o[1] <= addr_o[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+addr_o[2] <= addr_o[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+addr_o[3] <= addr_o[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+addr_o[4] <= addr_o[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+addr_o[5] <= addr_o[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+re_o <= re_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+remainBit[0] <= remainBit[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+remainBit[1] <= remainBit[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+remainBit[2] <= remainBit[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock
+re_i => trans_i[0].IN2
+remain_byte_i[0] => remain_byte_i[0].IN1
+remain_byte_i[1] => remain_byte_i[1].IN1
+remain_byte_i[2] => remain_byte_i[2].IN1
+addr_i[0] => trans_i[7].IN1
+addr_i[1] => trans_i[6].IN1
+addr_i[2] => trans_i[5].IN1
+addr_i[3] => trans_i[4].IN1
+addr_i[4] => trans_i[3].IN1
+addr_i[5] => trans_i[2].IN1
+data_i[0] => trans_i[15].IN1
+data_i[1] => trans_i[14].IN1
+data_i[2] => trans_i[13].IN1
+data_i[3] => trans_i[12].IN1
+data_i[4] => trans_i[11].IN1
+data_i[5] => trans_i[10].IN1
+data_i[6] => trans_i[9].IN1
+data_i[7] => trans_i[8].IN1
+mb_i => trans_i[1].IN1
+clk_i => clk_i.IN1
+cs_o <= control:controlBlock.cs_o
+clk_spi <= clk_spi_control.DB_MAX_OUTPUT_PORT_TYPE
+busy_o <= control:controlBlock.busy_o
+complete_o <= complete_o.DB_MAX_OUTPUT_PORT_TYPE
+miso_io <> transmit:transBlock.data_o
+miso_io <> receive:receiveBlock.data_i
+dataX[0] <= receive:receiveBlock.dataX_o
+dataX[1] <= receive:receiveBlock.dataX_o
+dataX[2] <= receive:receiveBlock.dataX_o
+dataX[3] <= receive:receiveBlock.dataX_o
+dataX[4] <= receive:receiveBlock.dataX_o
+dataX[5] <= receive:receiveBlock.dataX_o
+dataX[6] <= receive:receiveBlock.dataX_o
+dataX[7] <= receive:receiveBlock.dataX_o
+dataX[8] <= receive:receiveBlock.dataX_o
+dataX[9] <= receive:receiveBlock.dataX_o
+dataX[10] <= receive:receiveBlock.dataX_o
+dataX[11] <= receive:receiveBlock.dataX_o
+dataX[12] <= receive:receiveBlock.dataX_o
+dataX[13] <= receive:receiveBlock.dataX_o
+dataX[14] <= receive:receiveBlock.dataX_o
+dataX[15] <= receive:receiveBlock.dataX_o
+dataY[0] <= receive:receiveBlock.dataY_o
+dataY[1] <= receive:receiveBlock.dataY_o
+dataY[2] <= receive:receiveBlock.dataY_o
+dataY[3] <= receive:receiveBlock.dataY_o
+dataY[4] <= receive:receiveBlock.dataY_o
+dataY[5] <= receive:receiveBlock.dataY_o
+dataY[6] <= receive:receiveBlock.dataY_o
+dataY[7] <= receive:receiveBlock.dataY_o
+dataY[8] <= receive:receiveBlock.dataY_o
+dataY[9] <= receive:receiveBlock.dataY_o
+dataY[10] <= receive:receiveBlock.dataY_o
+dataY[11] <= receive:receiveBlock.dataY_o
+dataY[12] <= receive:receiveBlock.dataY_o
+dataY[13] <= receive:receiveBlock.dataY_o
+dataY[14] <= receive:receiveBlock.dataY_o
+dataY[15] <= receive:receiveBlock.dataY_o
+dataZ[0] <= receive:receiveBlock.dataZ_o
+dataZ[1] <= receive:receiveBlock.dataZ_o
+dataZ[2] <= receive:receiveBlock.dataZ_o
+dataZ[3] <= receive:receiveBlock.dataZ_o
+dataZ[4] <= receive:receiveBlock.dataZ_o
+dataZ[5] <= receive:receiveBlock.dataZ_o
+dataZ[6] <= receive:receiveBlock.dataZ_o
+dataZ[7] <= receive:receiveBlock.dataZ_o
+dataZ[8] <= receive:receiveBlock.dataZ_o
+dataZ[9] <= receive:receiveBlock.dataZ_o
+dataZ[10] <= receive:receiveBlock.dataZ_o
+dataZ[11] <= receive:receiveBlock.dataZ_o
+dataZ[12] <= receive:receiveBlock.dataZ_o
+dataZ[13] <= receive:receiveBlock.dataZ_o
+dataZ[14] <= receive:receiveBlock.dataZ_o
+dataZ[15] <= receive:receiveBlock.dataZ_o
+
+
+|adxl|spiCom:spiCommunicationBlock|control:controlBlock
+re_i => enable_read.DATAIN
+remainByte[0] => Selector5.IN2
+remainByte[1] => Selector4.IN2
+remainByte[2] => Selector3.IN2
+trans_i[0] => trans_o[0]~reg0.DATAIN
+trans_i[1] => trans_o[1]~reg0.DATAIN
+trans_i[2] => trans_o[2]~reg0.DATAIN
+trans_i[3] => trans_o[3]~reg0.DATAIN
+trans_i[4] => trans_o[4]~reg0.DATAIN
+trans_i[5] => trans_o[5]~reg0.DATAIN
+trans_i[6] => trans_o[6]~reg0.DATAIN
+trans_i[7] => trans_o[7]~reg0.DATAIN
+trans_i[8] => trans_o[8]~reg0.DATAIN
+trans_i[9] => trans_o[9]~reg0.DATAIN
+trans_i[10] => trans_o[10]~reg0.DATAIN
+trans_i[11] => trans_o[11]~reg0.DATAIN
+trans_i[12] => trans_o[12]~reg0.DATAIN
+trans_i[13] => trans_o[13]~reg0.DATAIN
+trans_i[14] => trans_o[14]~reg0.DATAIN
+trans_i[15] => trans_o[15]~reg0.DATAIN
+clk_i => enable_read.CLK
+clk_i => trans_o[0]~reg0.CLK
+clk_i => trans_o[1]~reg0.CLK
+clk_i => trans_o[2]~reg0.CLK
+clk_i => trans_o[3]~reg0.CLK
+clk_i => trans_o[4]~reg0.CLK
+clk_i => trans_o[5]~reg0.CLK
+clk_i => trans_o[6]~reg0.CLK
+clk_i => trans_o[7]~reg0.CLK
+clk_i => trans_o[8]~reg0.CLK
+clk_i => trans_o[9]~reg0.CLK
+clk_i => trans_o[10]~reg0.CLK
+clk_i => trans_o[11]~reg0.CLK
+clk_i => trans_o[12]~reg0.CLK
+clk_i => trans_o[13]~reg0.CLK
+clk_i => trans_o[14]~reg0.CLK
+clk_i => trans_o[15]~reg0.CLK
+clk_i => remain[0].CLK
+clk_i => remain[1].CLK
+clk_i => remain[2].CLK
+clk_i => complete_o~reg0.CLK
+clk_i => trans_bit[0]~reg0.CLK
+clk_i => trans_bit[1]~reg0.CLK
+clk_i => trans_bit[2]~reg0.CLK
+clk_i => trans_bit[3]~reg0.CLK
+clk_i => trans_bit[4]~reg0.CLK
+clk_i => busy_o~reg0.CLK
+clk_i => trans_e_o~reg0.CLK
+clk_i => clk_o~reg0.CLK
+clk_i => cs_o~reg0.CLK
+clk_i => state~1.DATAIN
+cs_o <= cs_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+busy_o <= busy_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+complete_o <= complete_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_e_o <= trans_e_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk_o <= clk_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_bit[0] <= trans_bit[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_bit[1] <= trans_bit[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_bit[2] <= trans_bit[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_bit[3] <= trans_bit[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_bit[4] <= trans_bit[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_o[0] <= trans_o[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_o[1] <= trans_o[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_o[2] <= trans_o[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_o[3] <= trans_o[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_o[4] <= trans_o[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_o[5] <= trans_o[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_o[6] <= trans_o[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_o[7] <= trans_o[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_o[8] <= trans_o[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_o[9] <= trans_o[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_o[10] <= trans_o[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_o[11] <= trans_o[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_o[12] <= trans_o[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_o[13] <= trans_o[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_o[14] <= trans_o[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trans_o[15] <= trans_o[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state_db[0] <= WideOr16.DB_MAX_OUTPUT_PORT_TYPE
+state_db[1] <= WideOr15.DB_MAX_OUTPUT_PORT_TYPE
+state_db[2] <= WideOr14.DB_MAX_OUTPUT_PORT_TYPE
+state_db[3] <= WideOr13.DB_MAX_OUTPUT_PORT_TYPE
+state_db[4] <= WideOr12.DB_MAX_OUTPUT_PORT_TYPE
+state_db[5] <= WideOr11.DB_MAX_OUTPUT_PORT_TYPE
+state_db[6] <= <GND>
+state_db[7] <= <GND>
+state_db[8] <= <GND>
+state_db[9] <= <GND>
+state_db[10] <= <GND>
+state_db[11] <= <GND>
+state_db[12] <= <GND>
+state_db[13] <= <GND>
+state_db[14] <= <GND>
+state_db[15] <= <GND>
+remain_db[0] <= remain[0].DB_MAX_OUTPUT_PORT_TYPE
+remain_db[1] <= remain[1].DB_MAX_OUTPUT_PORT_TYPE
+remain_db[2] <= remain[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|transmit:transBlock
+trans_i[0] => Mux0.IN15
+trans_i[1] => Mux0.IN14
+trans_i[2] => Mux0.IN13
+trans_i[3] => Mux0.IN12
+trans_i[4] => Mux0.IN11
+trans_i[5] => Mux0.IN10
+trans_i[6] => Mux0.IN9
+trans_i[7] => Mux0.IN8
+trans_i[8] => Mux0.IN7
+trans_i[9] => Mux0.IN6
+trans_i[10] => Mux0.IN5
+trans_i[11] => Mux0.IN4
+trans_i[12] => Mux0.IN3
+trans_i[13] => Mux0.IN2
+trans_i[14] => Mux0.IN1
+trans_i[15] => Mux0.IN0
+transBit_i[0] => Mux0.IN19
+transBit_i[1] => Mux0.IN18
+transBit_i[2] => Mux0.IN17
+transBit_i[3] => Mux0.IN16
+transBit_i[4] => ~NO_FANOUT~
+enable_trans => data_o.OE
+data_o <= data_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock
+data_i => data_i.IN1
+clk_i => clk_i.IN48
+latch_i => latch_data.IN48
+dataX_o[0] <= mydff:dffx0.d_o
+dataX_o[1] <= mydff:dffx1.d_o
+dataX_o[2] <= mydff:dffx2.d_o
+dataX_o[3] <= mydff:dffx3.d_o
+dataX_o[4] <= mydff:dffx4.d_o
+dataX_o[5] <= mydff:dffx5.d_o
+dataX_o[6] <= mydff:dffx6.d_o
+dataX_o[7] <= mydff:dffx7.d_o
+dataX_o[8] <= mydff:dffx8.d_o
+dataX_o[9] <= mydff:dffx9.d_o
+dataX_o[10] <= mydff:dffx10.d_o
+dataX_o[11] <= mydff:dffx11.d_o
+dataX_o[12] <= mydff:dffx12.d_o
+dataX_o[13] <= mydff:dffx13.d_o
+dataX_o[14] <= mydff:dffx14.d_o
+dataX_o[15] <= mydff:dffx15.d_o
+dataY_o[0] <= mydff:dffy0.d_o
+dataY_o[1] <= mydff:dffy1.d_o
+dataY_o[2] <= mydff:dffy2.d_o
+dataY_o[3] <= mydff:dffy3.d_o
+dataY_o[4] <= mydff:dffy4.d_o
+dataY_o[5] <= mydff:dffy5.d_o
+dataY_o[6] <= mydff:dffy6.d_o
+dataY_o[7] <= mydff:dffy7.d_o
+dataY_o[8] <= mydff:dffy8.d_o
+dataY_o[9] <= mydff:dffy9.d_o
+dataY_o[10] <= mydff:dffy10.d_o
+dataY_o[11] <= mydff:dffy11.d_o
+dataY_o[12] <= mydff:dffy12.d_o
+dataY_o[13] <= mydff:dffy13.d_o
+dataY_o[14] <= mydff:dffy14.d_o
+dataY_o[15] <= mydff:dffy15.d_o
+dataZ_o[0] <= mydff:dffz0.d_o
+dataZ_o[1] <= mydff:dffz1.d_o
+dataZ_o[2] <= mydff:dffz2.d_o
+dataZ_o[3] <= mydff:dffz3.d_o
+dataZ_o[4] <= mydff:dffz4.d_o
+dataZ_o[5] <= mydff:dffz5.d_o
+dataZ_o[6] <= mydff:dffz6.d_o
+dataZ_o[7] <= mydff:dffz7.d_o
+dataZ_o[8] <= mydff:dffz8.d_o
+dataZ_o[9] <= mydff:dffz9.d_o
+dataZ_o[10] <= mydff:dffz10.d_o
+dataZ_o[11] <= mydff:dffz11.d_o
+dataZ_o[12] <= mydff:dffz12.d_o
+dataZ_o[13] <= mydff:dffz13.d_o
+dataZ_o[14] <= mydff:dffz14.d_o
+dataZ_o[15] <= mydff:dffz15.d_o
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff0
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff1
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff2
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff3
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff4
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff5
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff6
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff7
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff8
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff9
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff10
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff11
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff12
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff13
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff14
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff15
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff16
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff17
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff18
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff19
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff20
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff21
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff22
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff23
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff24
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff25
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff26
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff27
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff28
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff29
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff30
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff31
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff32
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff33
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff34
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff35
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff36
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff37
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff38
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff39
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff40
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff41
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff42
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff43
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff44
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff45
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff46
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff47
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx7
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx6
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx5
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx4
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx3
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx2
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx1
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx0
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx15
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx14
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx13
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx12
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx11
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx10
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx9
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx8
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffy7
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffy6
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffy5
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffy4
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffy3
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffy2
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffy1
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffy0
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffy15
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffy14
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffy13
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffy12
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffy11
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffy10
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffy9
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffy8
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffz7
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffz6
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffz5
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffz4
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffz3
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffz2
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffz1
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffz0
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffz15
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffz14
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffz13
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffz12
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffz11
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffz10
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffz9
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffz8
+clk_i => d_o~reg0.CLK
+d_i => d_o~reg0.DATAIN
+d_o <= d_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adxl|driveLed:driverLed
+data_i[0] => dataAll.IN0
+data_i[0] => Add0.IN15
+data_i[1] => dataAll.IN0
+data_i[1] => Add0.IN14
+data_i[2] => dataAll.IN0
+data_i[2] => Add0.IN13
+data_i[3] => dataAll.IN0
+data_i[3] => Add0.IN12
+data_i[4] => dataAll.IN0
+data_i[4] => Add0.IN11
+data_i[5] => dataAll.IN0
+data_i[5] => Add0.IN10
+data_i[6] => dataAll.IN0
+data_i[6] => Add0.IN9
+data_i[7] => dataAll.IN1
+data_i[7] => dataAll.IN1
+data_i[7] => dataAll.IN1
+data_i[7] => dataAll.IN1
+data_i[7] => dataAll.IN1
+data_i[7] => dataAll.IN1
+data_i[7] => dataAll.IN1
+data_i[7] => dataAll.IN1
+data_i[7] => dataAll.IN1
+data_i[7] => dataAll.IN1
+data_i[7] => dataAll.IN1
+data_i[7] => dataAll.IN1
+data_i[7] => dataAll.IN1
+data_i[7] => dataAll.IN1
+data_i[7] => Add0.IN16
+data_i[7] => led_o.OUTPUTSELECT
+data_i[7] => led_o.OUTPUTSELECT
+data_i[7] => led_o.OUTPUTSELECT
+data_i[7] => led_o.OUTPUTSELECT
+data_i[7] => led_o.OUTPUTSELECT
+data_i[7] => led_o.OUTPUTSELECT
+data_i[7] => led_o.OUTPUTSELECT
+data_i[7] => led_o.OUTPUTSELECT
+led_o[0] <= led_o.DB_MAX_OUTPUT_PORT_TYPE
+led_o[1] <= led_o.DB_MAX_OUTPUT_PORT_TYPE
+led_o[2] <= led_o.DB_MAX_OUTPUT_PORT_TYPE
+led_o[3] <= led_o.DB_MAX_OUTPUT_PORT_TYPE
+led_o[4] <= led_o.DB_MAX_OUTPUT_PORT_TYPE
+led_o[5] <= led_o.DB_MAX_OUTPUT_PORT_TYPE
+led_o[6] <= led_o.DB_MAX_OUTPUT_PORT_TYPE
+led_o[7] <= led_o.DB_MAX_OUTPUT_PORT_TYPE
+
+

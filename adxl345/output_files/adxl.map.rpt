@@ -1,0 +1,670 @@
+Analysis & Synthesis report for adxl
+Mon Jul 01 02:08:35 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |adxl|spiCom:spiCommunicationBlock|control:controlBlock|state
+  9. State Machine - |adxl|RWControl:stateControlBlock|state
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Port Connectivity Checks: "spiCom:spiCommunicationBlock|control:controlBlock"
+ 15. Port Connectivity Checks: "spiCom:spiCommunicationBlock"
+ 16. Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff11"
+ 17. Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff10"
+ 18. Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff9"
+ 19. Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff8"
+ 20. Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff7"
+ 21. Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff6"
+ 22. Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff5"
+ 23. Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff4"
+ 24. Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff3"
+ 25. Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff2"
+ 26. Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff1"
+ 27. Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff0"
+ 28. Elapsed Time Per Partition
+ 29. Analysis & Synthesis Messages
+ 30. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Jul 01 02:08:35 2024           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; adxl                                            ;
+; Top-level Entity Name              ; adxl                                            ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 187                                             ;
+;     Total combinational functions  ; 89                                              ;
+;     Dedicated logic registers      ; 132                                             ;
+; Total registers                    ; 132                                             ;
+; Total pins                         ; 12                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                                      ; adxl               ; adxl               ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                     ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                 ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------+---------+
+; driveLed.sv                      ; yes             ; User SystemVerilog HDL File  ; D:/subject/TeamDE0-Nano/adxl345/driveLed.sv  ;         ;
+; adxl.sv                          ; yes             ; User SystemVerilog HDL File  ; D:/subject/TeamDE0-Nano/adxl345/adxl.sv      ;         ;
+; RWControl.sv                     ; yes             ; User SystemVerilog HDL File  ; D:/subject/TeamDE0-Nano/adxl345/RWControl.sv ;         ;
+; div_freq.sv                      ; yes             ; User SystemVerilog HDL File  ; D:/subject/TeamDE0-Nano/adxl345/div_freq.sv  ;         ;
+; mytff.sv                         ; yes             ; User SystemVerilog HDL File  ; D:/subject/TeamDE0-Nano/adxl345/mytff.sv     ;         ;
+; mydff.sv                         ; yes             ; User SystemVerilog HDL File  ; D:/subject/TeamDE0-Nano/adxl345/mydff.sv     ;         ;
+; control.sv                       ; yes             ; User SystemVerilog HDL File  ; D:/subject/TeamDE0-Nano/adxl345/control.sv   ;         ;
+; transmit.sv                      ; yes             ; User SystemVerilog HDL File  ; D:/subject/TeamDE0-Nano/adxl345/transmit.sv  ;         ;
+; spiCom.sv                        ; yes             ; User SystemVerilog HDL File  ; D:/subject/TeamDE0-Nano/adxl345/spiCom.sv    ;         ;
+; receive.sv                       ; yes             ; User SystemVerilog HDL File  ; D:/subject/TeamDE0-Nano/adxl345/receive.sv   ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                            ;
++---------------------------------------------+------------------------------------------+
+; Resource                                    ; Usage                                    ;
++---------------------------------------------+------------------------------------------+
+; Estimated Total logic elements              ; 187                                      ;
+;                                             ;                                          ;
+; Total combinational functions               ; 89                                       ;
+; Logic element usage by number of LUT inputs ;                                          ;
+;     -- 4 input functions                    ; 45                                       ;
+;     -- 3 input functions                    ; 17                                       ;
+;     -- <=2 input functions                  ; 27                                       ;
+;                                             ;                                          ;
+; Logic elements by mode                      ;                                          ;
+;     -- normal mode                          ; 84                                       ;
+;     -- arithmetic mode                      ; 5                                        ;
+;                                             ;                                          ;
+; Total registers                             ; 132                                      ;
+;     -- Dedicated logic registers            ; 132                                      ;
+;     -- I/O registers                        ; 0                                        ;
+;                                             ;                                          ;
+; I/O pins                                    ; 12                                       ;
+; Embedded Multiplier 9-bit elements          ; 0                                        ;
+; Maximum fan-out node                        ; div_freq:divFrequenceBlock|mytff:tff11|q ;
+; Maximum fan-out                             ; 65                                       ;
+; Total fan-out                               ; 561                                      ;
+; Average fan-out                             ; 2.28                                     ;
++---------------------------------------------+------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                 ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                  ; Library Name ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+--------------+
+; |adxl                             ; 89 (0)            ; 132 (0)      ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |adxl                                                                ; work         ;
+;    |RWControl:stateControlBlock|  ; 5 (5)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|RWControl:stateControlBlock                                    ; work         ;
+;    |div_freq:divFrequenceBlock|   ; 12 (0)            ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|div_freq:divFrequenceBlock                                     ; work         ;
+;       |mytff:tff0|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|div_freq:divFrequenceBlock|mytff:tff0                          ; work         ;
+;       |mytff:tff10|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|div_freq:divFrequenceBlock|mytff:tff10                         ; work         ;
+;       |mytff:tff11|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|div_freq:divFrequenceBlock|mytff:tff11                         ; work         ;
+;       |mytff:tff1|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|div_freq:divFrequenceBlock|mytff:tff1                          ; work         ;
+;       |mytff:tff2|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|div_freq:divFrequenceBlock|mytff:tff2                          ; work         ;
+;       |mytff:tff3|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|div_freq:divFrequenceBlock|mytff:tff3                          ; work         ;
+;       |mytff:tff4|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|div_freq:divFrequenceBlock|mytff:tff4                          ; work         ;
+;       |mytff:tff5|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|div_freq:divFrequenceBlock|mytff:tff5                          ; work         ;
+;       |mytff:tff6|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|div_freq:divFrequenceBlock|mytff:tff6                          ; work         ;
+;       |mytff:tff7|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|div_freq:divFrequenceBlock|mytff:tff7                          ; work         ;
+;       |mytff:tff8|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|div_freq:divFrequenceBlock|mytff:tff8                          ; work         ;
+;       |mytff:tff9|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|div_freq:divFrequenceBlock|mytff:tff9                          ; work         ;
+;    |driveLed:driverLed|           ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|driveLed:driverLed                                             ; work         ;
+;    |spiCom:spiCommunicationBlock| ; 45 (0)            ; 114 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock                                   ; work         ;
+;       |control:controlBlock|      ; 40 (40)           ; 58 (58)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|control:controlBlock              ; work         ;
+;       |receive:receiveBlock|      ; 0 (0)             ; 56 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock              ; work         ;
+;          |mydff:dff0|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff0   ; work         ;
+;          |mydff:dff10|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff10  ; work         ;
+;          |mydff:dff11|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff11  ; work         ;
+;          |mydff:dff12|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff12  ; work         ;
+;          |mydff:dff13|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff13  ; work         ;
+;          |mydff:dff14|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff14  ; work         ;
+;          |mydff:dff15|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff15  ; work         ;
+;          |mydff:dff16|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff16  ; work         ;
+;          |mydff:dff17|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff17  ; work         ;
+;          |mydff:dff18|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff18  ; work         ;
+;          |mydff:dff19|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff19  ; work         ;
+;          |mydff:dff1|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff1   ; work         ;
+;          |mydff:dff20|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff20  ; work         ;
+;          |mydff:dff21|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff21  ; work         ;
+;          |mydff:dff22|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff22  ; work         ;
+;          |mydff:dff23|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff23  ; work         ;
+;          |mydff:dff24|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff24  ; work         ;
+;          |mydff:dff25|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff25  ; work         ;
+;          |mydff:dff26|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff26  ; work         ;
+;          |mydff:dff27|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff27  ; work         ;
+;          |mydff:dff28|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff28  ; work         ;
+;          |mydff:dff29|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff29  ; work         ;
+;          |mydff:dff2|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff2   ; work         ;
+;          |mydff:dff30|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff30  ; work         ;
+;          |mydff:dff31|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff31  ; work         ;
+;          |mydff:dff32|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff32  ; work         ;
+;          |mydff:dff33|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff33  ; work         ;
+;          |mydff:dff34|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff34  ; work         ;
+;          |mydff:dff35|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff35  ; work         ;
+;          |mydff:dff36|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff36  ; work         ;
+;          |mydff:dff37|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff37  ; work         ;
+;          |mydff:dff38|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff38  ; work         ;
+;          |mydff:dff39|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff39  ; work         ;
+;          |mydff:dff3|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff3   ; work         ;
+;          |mydff:dff40|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff40  ; work         ;
+;          |mydff:dff41|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff41  ; work         ;
+;          |mydff:dff42|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff42  ; work         ;
+;          |mydff:dff43|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff43  ; work         ;
+;          |mydff:dff44|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff44  ; work         ;
+;          |mydff:dff45|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff45  ; work         ;
+;          |mydff:dff46|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff46  ; work         ;
+;          |mydff:dff47|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff47  ; work         ;
+;          |mydff:dff4|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff4   ; work         ;
+;          |mydff:dff5|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff5   ; work         ;
+;          |mydff:dff6|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff6   ; work         ;
+;          |mydff:dff7|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff7   ; work         ;
+;          |mydff:dff8|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff8   ; work         ;
+;          |mydff:dff9|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff9   ; work         ;
+;          |mydff:dffx10|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx10 ; work         ;
+;          |mydff:dffx3|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx3  ; work         ;
+;          |mydff:dffx4|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx4  ; work         ;
+;          |mydff:dffx5|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx5  ; work         ;
+;          |mydff:dffx6|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx6  ; work         ;
+;          |mydff:dffx7|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx7  ; work         ;
+;          |mydff:dffx8|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx8  ; work         ;
+;          |mydff:dffx9|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dffx9  ; work         ;
+;       |transmit:transBlock|       ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adxl|spiCom:spiCommunicationBlock|transmit:transBlock               ; work         ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |adxl|spiCom:spiCommunicationBlock|control:controlBlock|state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ;
++--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+; Name         ; state.101011 ; state.101010 ; state.101001 ; state.101000 ; state.100111 ; state.100110 ; state.100101 ; state.100100 ; state.100011 ; state.100010 ; state.100001 ; state.100000 ; state.011111 ; state.011110 ; state.011101 ; state.011100 ; state.011011 ; state.011010 ; state.011001 ; state.011000 ; state.010111 ; state.010110 ; state.010101 ; state.010100 ; state.010011 ; state.010010 ; state.010001 ; state.010000 ; state.001111 ; state.001110 ; state.001101 ; state.001100 ; state.001011 ; state.001010 ; state.001001 ; state.001000 ; state.000111 ; state.000110 ; state.000101 ; state.000100 ; state.000011 ; state.000010 ; state.000001 ; state.000000 ;
++--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+; state.000000 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
+; state.000001 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 1            ;
+; state.000010 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 1            ;
+; state.000011 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 1            ;
+; state.000100 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 1            ;
+; state.000101 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.000110 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.000111 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.001000 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.001001 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.001010 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.001011 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.001100 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.001101 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.001110 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.001111 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.010000 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.010001 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.010010 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.010011 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.010100 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.010101 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.010110 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.010111 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.011000 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.011001 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.011010 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.011011 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.011100 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.011101 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.011110 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.011111 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.100000 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.100001 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.100010 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.100011 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.100100 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.100101 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.100110 ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.100111 ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.101000 ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.101001 ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.101010 ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.101011 ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
++--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------+
+; State Machine - |adxl|RWControl:stateControlBlock|state ;
++-----------+-----------+-----------+---------------------+
+; Name      ; state.000 ; state.010 ; state.001           ;
++-----------+-----------+-----------+---------------------+
+; state.000 ; 0         ; 0         ; 0                   ;
+; state.001 ; 1         ; 0         ; 1                   ;
+; state.010 ; 1         ; 1         ; 0                   ;
++-----------+-----------+-----------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                    ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------------+
+; Register name                                                             ; Reason for Removal                                                        ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------------+
+; RWControl:stateControlBlock|data_o[0..2]                                  ; Stuck at GND due to stuck port data_in                                    ;
+; RWControl:stateControlBlock|addr_o[5]                                     ; Stuck at VCC due to stuck port data_in                                    ;
+; RWControl:stateControlBlock|data_o[4,5,7]                                 ; Stuck at GND due to stuck port data_in                                    ;
+; spiCom:spiCommunicationBlock|control:controlBlock|trans_o[8,10,11,13..15] ; Stuck at GND due to stuck port data_in                                    ;
+; spiCom:spiCommunicationBlock|control:controlBlock|trans_o[2]              ; Stuck at VCC due to stuck port data_in                                    ;
+; spiCom:spiCommunicationBlock|control:controlBlock|enable_read             ; Merged with spiCom:spiCommunicationBlock|control:controlBlock|trans_o[0]  ;
+; RWControl:stateControlBlock|addr_o[2,3]                                   ; Merged with RWControl:stateControlBlock|addr_o[4]                         ;
+; RWControl:stateControlBlock|mb_o                                          ; Merged with RWControl:stateControlBlock|addr_o[1]                         ;
+; RWControl:stateControlBlock|remainBit[1,2]                                ; Merged with RWControl:stateControlBlock|addr_o[1]                         ;
+; RWControl:stateControlBlock|re_o                                          ; Merged with RWControl:stateControlBlock|addr_o[1]                         ;
+; RWControl:stateControlBlock|data_o[3]                                     ; Merged with RWControl:stateControlBlock|addr_o[1]                         ;
+; RWControl:stateControlBlock|addr_o[0]                                     ; Merged with RWControl:stateControlBlock|addr_o[1]                         ;
+; RWControl:stateControlBlock|remainBit[0]                                  ; Merged with RWControl:stateControlBlock|addr_o[1]                         ;
+; spiCom:spiCommunicationBlock|control:controlBlock|trans_o[0,1,6,7]        ; Merged with spiCom:spiCommunicationBlock|control:controlBlock|trans_o[12] ;
+; spiCom:spiCommunicationBlock|control:controlBlock|trans_o[3,4]            ; Merged with spiCom:spiCommunicationBlock|control:controlBlock|trans_o[5]  ;
+; spiCom:spiCommunicationBlock|control:controlBlock|state~2                 ; Lost fanout                                                               ;
+; spiCom:spiCommunicationBlock|control:controlBlock|state~3                 ; Lost fanout                                                               ;
+; spiCom:spiCommunicationBlock|control:controlBlock|state~4                 ; Lost fanout                                                               ;
+; spiCom:spiCommunicationBlock|control:controlBlock|state~5                 ; Lost fanout                                                               ;
+; spiCom:spiCommunicationBlock|control:controlBlock|state~6                 ; Lost fanout                                                               ;
+; spiCom:spiCommunicationBlock|control:controlBlock|state~7                 ; Lost fanout                                                               ;
+; RWControl:stateControlBlock|state~7                                       ; Lost fanout                                                               ;
+; Total Number of Removed Registers = 37                                    ;                                                                           ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                       ;
++---------------------------------------+---------------------------+---------------------------------------------------------------+
+; Register name                         ; Reason for Removal        ; Registers Removed due to This Register                        ;
++---------------------------------------+---------------------------+---------------------------------------------------------------+
+; RWControl:stateControlBlock|data_o[2] ; Stuck at GND              ; spiCom:spiCommunicationBlock|control:controlBlock|trans_o[13] ;
+;                                       ; due to stuck port data_in ;                                                               ;
+; RWControl:stateControlBlock|data_o[1] ; Stuck at GND              ; spiCom:spiCommunicationBlock|control:controlBlock|trans_o[14] ;
+;                                       ; due to stuck port data_in ;                                                               ;
+; RWControl:stateControlBlock|data_o[0] ; Stuck at GND              ; spiCom:spiCommunicationBlock|control:controlBlock|trans_o[15] ;
+;                                       ; due to stuck port data_in ;                                                               ;
+; RWControl:stateControlBlock|addr_o[5] ; Stuck at VCC              ; spiCom:spiCommunicationBlock|control:controlBlock|trans_o[2]  ;
+;                                       ; due to stuck port data_in ;                                                               ;
+; RWControl:stateControlBlock|data_o[4] ; Stuck at GND              ; spiCom:spiCommunicationBlock|control:controlBlock|trans_o[11] ;
+;                                       ; due to stuck port data_in ;                                                               ;
+; RWControl:stateControlBlock|data_o[5] ; Stuck at GND              ; spiCom:spiCommunicationBlock|control:controlBlock|trans_o[10] ;
+;                                       ; due to stuck port data_in ;                                                               ;
+; RWControl:stateControlBlock|data_o[7] ; Stuck at GND              ; spiCom:spiCommunicationBlock|control:controlBlock|trans_o[8]  ;
+;                                       ; due to stuck port data_in ;                                                               ;
++---------------------------------------+---------------------------+---------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 132   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 6     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |adxl|spiCom:spiCommunicationBlock|control:controlBlock|remain[2] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |adxl|RWControl:stateControlBlock|Selector1                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "spiCom:spiCommunicationBlock|control:controlBlock"                                                            ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                  ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; state_db  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; remain_db ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "spiCom:spiCommunicationBlock"                                                                ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; busy_o        ; Output ; Info     ; Explicitly unconnected                                                              ;
+; dataX[15..11] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; dataX[2..0]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; dataY         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; dataZ         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff11" ;
++------+-------+----------+------------------------------------------+
+; Port ; Type  ; Severity ; Details                                  ;
++------+-------+----------+------------------------------------------+
+; t    ; Input ; Info     ; Stuck at VCC                             ;
++------+-------+----------+------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff10" ;
++------+-------+----------+------------------------------------------+
+; Port ; Type  ; Severity ; Details                                  ;
++------+-------+----------+------------------------------------------+
+; t    ; Input ; Info     ; Stuck at VCC                             ;
++------+-------+----------+------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff9" ;
++------+-------+----------+-----------------------------------------+
+; Port ; Type  ; Severity ; Details                                 ;
++------+-------+----------+-----------------------------------------+
+; t    ; Input ; Info     ; Stuck at VCC                            ;
++------+-------+----------+-----------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff8" ;
++------+-------+----------+-----------------------------------------+
+; Port ; Type  ; Severity ; Details                                 ;
++------+-------+----------+-----------------------------------------+
+; t    ; Input ; Info     ; Stuck at VCC                            ;
++------+-------+----------+-----------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff7" ;
++------+-------+----------+-----------------------------------------+
+; Port ; Type  ; Severity ; Details                                 ;
++------+-------+----------+-----------------------------------------+
+; t    ; Input ; Info     ; Stuck at VCC                            ;
++------+-------+----------+-----------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff6" ;
++------+-------+----------+-----------------------------------------+
+; Port ; Type  ; Severity ; Details                                 ;
++------+-------+----------+-----------------------------------------+
+; t    ; Input ; Info     ; Stuck at VCC                            ;
++------+-------+----------+-----------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff5" ;
++------+-------+----------+-----------------------------------------+
+; Port ; Type  ; Severity ; Details                                 ;
++------+-------+----------+-----------------------------------------+
+; t    ; Input ; Info     ; Stuck at VCC                            ;
++------+-------+----------+-----------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff4" ;
++------+-------+----------+-----------------------------------------+
+; Port ; Type  ; Severity ; Details                                 ;
++------+-------+----------+-----------------------------------------+
+; t    ; Input ; Info     ; Stuck at VCC                            ;
++------+-------+----------+-----------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff3" ;
++------+-------+----------+-----------------------------------------+
+; Port ; Type  ; Severity ; Details                                 ;
++------+-------+----------+-----------------------------------------+
+; t    ; Input ; Info     ; Stuck at VCC                            ;
++------+-------+----------+-----------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff2" ;
++------+-------+----------+-----------------------------------------+
+; Port ; Type  ; Severity ; Details                                 ;
++------+-------+----------+-----------------------------------------+
+; t    ; Input ; Info     ; Stuck at VCC                            ;
++------+-------+----------+-----------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff1" ;
++------+-------+----------+-----------------------------------------+
+; Port ; Type  ; Severity ; Details                                 ;
++------+-------+----------+-----------------------------------------+
+; t    ; Input ; Info     ; Stuck at VCC                            ;
++------+-------+----------+-----------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "div_freq:divFrequenceBlock|mytff:tff0" ;
++------+-------+----------+-----------------------------------------+
+; Port ; Type  ; Severity ; Details                                 ;
++------+-------+----------+-----------------------------------------+
+; t    ; Input ; Info     ; Stuck at VCC                            ;
++------+-------+----------+-----------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon Jul 01 02:08:31 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off adxl -c adxl
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file driveled.sv
+    Info (12023): Found entity 1: driveLed
+Info (12021): Found 1 design units, including 1 entities, in source file adxl.sv
+    Info (12023): Found entity 1: adxl
+Info (12021): Found 1 design units, including 1 entities, in source file rwcontrol.sv
+    Info (12023): Found entity 1: RWControl
+Info (12021): Found 1 design units, including 1 entities, in source file div_freq.sv
+    Info (12023): Found entity 1: div_freq
+Info (12021): Found 1 design units, including 1 entities, in source file mytff.sv
+    Info (12023): Found entity 1: mytff
+Info (12021): Found 1 design units, including 1 entities, in source file mydff.sv
+    Info (12023): Found entity 1: mydff
+Info (12021): Found 1 design units, including 1 entities, in source file control.sv
+    Info (12023): Found entity 1: control
+Info (12021): Found 1 design units, including 1 entities, in source file transmit.sv
+    Info (12023): Found entity 1: transmit
+Info (12021): Found 1 design units, including 1 entities, in source file spicom.sv
+    Info (12023): Found entity 1: spiCom
+Info (12021): Found 1 design units, including 1 entities, in source file receive.sv
+    Info (12023): Found entity 1: receive
+Warning (10236): Verilog HDL Implicit Net warning at div_freq.sv(5): created implicit net for "clk0"
+Warning (10236): Verilog HDL Implicit Net warning at div_freq.sv(6): created implicit net for "clk1"
+Warning (10236): Verilog HDL Implicit Net warning at div_freq.sv(7): created implicit net for "clk2"
+Warning (10236): Verilog HDL Implicit Net warning at div_freq.sv(8): created implicit net for "clk3"
+Warning (10236): Verilog HDL Implicit Net warning at div_freq.sv(9): created implicit net for "clk4"
+Warning (10236): Verilog HDL Implicit Net warning at div_freq.sv(10): created implicit net for "clk5"
+Warning (10236): Verilog HDL Implicit Net warning at div_freq.sv(11): created implicit net for "clk6"
+Warning (10236): Verilog HDL Implicit Net warning at div_freq.sv(12): created implicit net for "clk7"
+Warning (10236): Verilog HDL Implicit Net warning at div_freq.sv(13): created implicit net for "clk8"
+Warning (10236): Verilog HDL Implicit Net warning at div_freq.sv(14): created implicit net for "clk9"
+Warning (10236): Verilog HDL Implicit Net warning at div_freq.sv(15): created implicit net for "clk10"
+Info (12127): Elaborating entity "adxl" for the top level hierarchy
+Info (12128): Elaborating entity "div_freq" for hierarchy "div_freq:divFrequenceBlock"
+Info (12128): Elaborating entity "mytff" for hierarchy "div_freq:divFrequenceBlock|mytff:tff0"
+Info (12128): Elaborating entity "RWControl" for hierarchy "RWControl:stateControlBlock"
+Info (12128): Elaborating entity "spiCom" for hierarchy "spiCom:spiCommunicationBlock"
+Info (12128): Elaborating entity "control" for hierarchy "spiCom:spiCommunicationBlock|control:controlBlock"
+Warning (10230): Verilog HDL assignment warning at control.sv(399): truncated value with size 32 to match size of target (3)
+Info (12128): Elaborating entity "transmit" for hierarchy "spiCom:spiCommunicationBlock|transmit:transBlock"
+Info (12128): Elaborating entity "receive" for hierarchy "spiCom:spiCommunicationBlock|receive:receiveBlock"
+Info (12128): Elaborating entity "mydff" for hierarchy "spiCom:spiCommunicationBlock|receive:receiveBlock|mydff:dff0"
+Info (12128): Elaborating entity "driveLed" for hierarchy "driveLed:driverLed"
+Warning (10230): Verilog HDL assignment warning at driveLed.sv(6): truncated value with size 32 to match size of target (8)
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 7 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file D:/subject/TeamDE0-Nano/adxl345/output_files/adxl.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 199 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 10 output pins
+    Info (21060): Implemented 1 bidirectional pins
+    Info (21061): Implemented 187 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 4582 megabytes
+    Info: Processing ended: Mon Jul 01 02:08:35 2024
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/subject/TeamDE0-Nano/adxl345/output_files/adxl.map.smsg.
+
+
